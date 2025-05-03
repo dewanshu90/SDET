@@ -1,54 +1,70 @@
-# BuildingASkilledSdetCrewForComprehensiveTestAutomation Crew
+# Building a Skilled SDET Crew for Comprehensive Test Automation
 
-Welcome to the BuildingASkilledSdetCrewForComprehensiveTestAutomation Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+This project implements a multi-agent AI system designed to facilitate comprehensive test automation. The system leverages multiple AI agents collaborating to perform complex testing tasks efficiently and effectively.
+
+## Prerequisites
+
+- Python 3.10 to 3.13 installed on your system.
+- An OpenAI API key (or other required API keys) configured in a `.env` file.
 
 ## Installation
 
-Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+1. Create and activate a Python virtual environment (recommended):
 
-First, if you haven't already, install uv:
+   ```bash
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On Unix or MacOS
+   source venv/bin/activate
+   ```
 
-```bash
-pip install uv
-```
+2. Install the required dependencies:
 
-Next, navigate to your project directory and install the dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+   *(If you do not have a `requirements.txt` file, please create one with the necessary packages.)*
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+3. Create a `.env` file in the root directory and add your API keys and environment variables. For example:
 
-- Modify `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/config/agents.yaml` to define your agents
-- Modify `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/config/tasks.yaml` to define your tasks
-- Modify `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/crew.py` to add your own logic, tools and specific args
-- Modify `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/main.py` to add custom inputs for your agents and tasks
+   ```
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+
+## Configuration
+
+- Modify `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/config/agents.yaml` to define your AI agents.
+- Modify `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/config/tasks.yaml` to define the tasks for the agents.
+- Customize `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/crew.py` to add your own logic, tools, and arguments.
+- Customize `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/main.py` to provide custom inputs for your agents and tasks.
 
 ## Running the Project
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+Run the project from the root directory:
 
 ```bash
-$ crewai run
+python -m src.building_a_skilled_sdet_crew_for_comprehensive_test_automation.main
 ```
 
-This command initializes the building_a_skilled_sdet_crew_for_comprehensive_test_automation Crew, assembling the agents and assigning them tasks as defined in your configuration.
+This will start the AI crew and execute the defined tasks.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+## Project Structure
 
-## Understanding Your Crew
-
-The building_a_skilled_sdet_crew_for_comprehensive_test_automation Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+- `src/building_a_skilled_sdet_crew_for_comprehensive_test_automation/` - Main source code and configuration.
+- `tests/` - Test cases and test automation scripts.
+- `.env` - Environment variables (should be kept secret and not committed to version control).
+- `.gitignore` - Specifies files and directories to be ignored by git.
 
 ## Support
 
-For support, questions, or feedback regarding the BuildingASkilledSdetCrewForComprehensiveTestAutomation Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+For questions, issues, or contributions, please open an issue or pull request in the repository.
 
-Let's create wonders together with the power and simplicity of crewAI.
+## License
+
+Specify your project license here.
+
+---
+
+Let's build a skilled SDET crew to automate testing comprehensively and efficiently!
