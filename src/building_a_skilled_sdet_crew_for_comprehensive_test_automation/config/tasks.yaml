@@ -1,0 +1,35 @@
+---
+generate_manual_test_cases:
+  description: Create detailed manual test cases for the web-based application using
+    the provided {test_scenarios}.
+  expected_output: A comprehensive set of manual test cases covering all provided
+    scenarios for the application.
+  async_execution: false
+  agent: test_case_generator
+create_automation_scripts:
+  description: Convert the manual test cases into Selenium or Playwright scripts,
+    ensuring the use of correct element locators (XPath/CSS) for {application_url}.
+  expected_output: Executable Selenium or Playwright scripts with accurate element
+    locators for all manual test cases.
+  async_execution: false
+  agent: script_automation_specialist
+  context:
+  - generate_manual_test_cases
+execute_automated_scripts:
+  description: Run the generated Selenium or Playwright scripts on the Chrome browser
+    for the application at {application_url}.
+  expected_output: Successful execution of all automated scripts on Chrome with recorded
+    results.
+  async_execution: false
+  agent: execution_manager
+  context:
+  - create_automation_scripts
+generate_execution_report:
+  description: Compile the results of the script execution into a detailed report,
+    highlighting successes, failures, and any anomalies.
+  expected_output: A detailed execution report summarizing the results of the test
+    scripts, including any errors or issues encountered.
+  async_execution: false
+  agent: report_generator
+  context:
+  - execute_automated_scripts
